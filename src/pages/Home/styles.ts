@@ -28,7 +28,6 @@ export const FormContainer = styled.div`
   font-weight: bold;
   flex-wrap: wrap;
 `
-
 const BaseInput = styled.input`
   background: transparent;
   height: 2.5rem;
@@ -85,7 +84,7 @@ export const Separator = styled.div`
   color: ${(props) => props.theme['green-500']};
 `
 
-export const StartCountDownButton = styled.button`
+const BaseCountdownButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,10 +94,9 @@ export const StartCountDownButton = styled.button`
   padding: 1rem 2.5rem;
   border-radius: 8px;
   width: 100%;
-  background: ${(props) => props.theme['green-500']};
   font-weight: bold;
-  color: ${(props) => props.theme['gray-100']};
   cursor: pointer;
+  color: ${(props) => props.theme['gray-100']};
 
   transition: all 0.2s;
 
@@ -106,8 +104,20 @@ export const StartCountDownButton = styled.button`
     opacity: 0.5;
     cursor: not-allowed;
   }
+`
+
+export const StartCountDownButton = styled(BaseCountdownButton)`
+  background: ${(props) => props.theme['green-500']};
 
   &:not(:disabled):hover {
     background: ${(props) => props.theme['green-700']};
+  }
+`
+
+export const StopCountDownButton = styled(BaseCountdownButton)`
+  background: ${(props) => props.theme['red-500']};
+
+  &:not(:disabled):hover {
+    background: ${(props) => props.theme['red-700']};
   }
 `
