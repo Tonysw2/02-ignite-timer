@@ -21,6 +21,7 @@ export const Countdown = function () {
   const minutes = String(minutesAmount).padStart(2, '0')
   const seconds = String(secondsAmount).padStart(2, '0')
 
+  // START COUNTDOWN
   useEffect(() => {
     let interval: number
 
@@ -28,7 +29,7 @@ export const Countdown = function () {
       interval = setInterval(() => {
         const secondsDifference = differenceInSeconds(
           new Date(),
-          activeCycle.startDate,
+          new Date(activeCycle.startDate),
         )
 
         if (secondsDifference >= totalSeconds) {
@@ -52,6 +53,7 @@ export const Countdown = function () {
     setSecondsPassed,
   ])
 
+  // SHOW TIME IN DOCUMENT TITLE
   useEffect(() => {
     if (activeCycle) {
       document.title = `${minutes}:${seconds}`
