@@ -17,10 +17,6 @@ export const HomeContainer = styled.main`
   }
 `
 
-
-
-
-
 const BaseCountdownButton = styled.button`
   display: flex;
   justify-content: center;
